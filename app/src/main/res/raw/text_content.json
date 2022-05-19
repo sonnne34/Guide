@@ -1,7 +1,7 @@
 {
 	"sectionOne": {
 		"sectionName": "sectionOne",
-		"sections": {
+		"articles": {
 			"article1": {
 				"id": "0",
 				"articleName": "article One, section One",
@@ -21,7 +21,7 @@
 	},
 	"sectionTwo": {
 		"sectionName": "sectionTwo",
-		"sections": {
+		"articles": {
 			"article1": {
 				"id": "0",
 				"articleName": "article One, section Two",
@@ -41,7 +41,7 @@
 	},
 	"sectionThree": {
 		"sectionName": "sectionThree",
-		"sections": {
+		"articles": {
 			"article1": {
 				"id": "0",
 				"articleName": "article One, section Three",

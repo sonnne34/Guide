@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.sections.SectionsFragment">
+    tools:context=".SectionsFragment">
 
     <include
         android:id="@+id/item_card_section_one"

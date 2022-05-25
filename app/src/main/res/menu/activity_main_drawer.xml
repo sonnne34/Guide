@@ -6,12 +6,25 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_section_one"
-            android:title="@string/section_name_one" />
+            android:title="@string/section_name_1" />
         <item
             android:id="@+id/nav_section_two"
-            android:title="@string/section_name_two" />
+            android:title="@string/section_name_2" />
         <item
             android:id="@+id/nav_section_three"
-            android:title="@string/section_name_three" />
+            android:title="@string/section_name_3" />
+
+        <item
+            android:id="@+id/nav_section_four"
+            android:title="@string/section_name_4" />
+
+        <item
+            android:id="@+id/nav_section_five"
+            android:title="@string/section_name_5" />
     </group>
+
+    <item
+        android:id="@+id/nav_exit"
+        android:icon="@drawable/ic_exit"
+        android:title="@string/exit" />
 </menu>

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -20,8 +21,10 @@ class ArticlesFragment : Fragment() {
     private lateinit var articleOne: TextView
     private lateinit var articleTwo: TextView
     private lateinit var articleThree: TextView
-    private lateinit var articleFour: TextView
-    private lateinit var articleFive: TextView
+
+    private lateinit var imgArticleOne: ImageView
+    private lateinit var imgArticleTwo: ImageView
+    private lateinit var imgArticleThree: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,43 +42,71 @@ class ArticlesFragment : Fragment() {
 
         when (args.position) {
             1 -> {
-                articleOne.text = getString(R.string.articles_name_1)
-                articleTwo.text = getString(R.string.articles_name_2)
-                articleThree.text = getString(R.string.articles_name_3)
-                articleFour.text = getString(R.string.articles_name_4)
-                articleFive.text = getString(R.string.articles_name_5)
+                imgArticleOne.setBackgroundResource(R.drawable.img_article_1_1)
+                imgArticleTwo.setBackgroundResource(R.drawable.img_article_1_2)
+                imgArticleThree.setBackgroundResource(R.drawable.img_article_1_3)
 
-                onClickListener(articleOne, 1)
-                onClickListener(articleTwo, 2)
-                onClickListener(articleThree, 3)
-                onClickListener(articleFour, 4)
-                onClickListener(articleFive, 5)
+                articleOne.text = getString(R.string.articles_name_1_1)
+                articleTwo.text = getString(R.string.articles_name_1_2)
+                articleThree.text = getString(R.string.articles_name_1_3)
+
+                onClickListener(imgArticleOne, 1)
+                onClickListener(imgArticleTwo, 2)
+                onClickListener(imgArticleThree, 3)
             }
             2 -> {
-                articleOne.text = getString(R.string.articles_name_6)
-                articleTwo.text = getString(R.string.articles_name_7)
-                articleThree.text = getString(R.string.articles_name_8)
-                articleFour.text = getString(R.string.articles_name_9)
-                articleFive.text = getString(R.string.articles_name_10)
+                imgArticleOne.setBackgroundResource(R.drawable.img_article_2_1)
+                imgArticleTwo.setBackgroundResource(R.drawable.img_article_2_2)
+                imgArticleThree.setBackgroundResource(R.drawable.img_article_2_3)
 
-                onClickListener(articleOne, 6)
-                onClickListener(articleTwo, 7)
-                onClickListener(articleThree, 8)
-                onClickListener(articleFour, 9)
-                onClickListener(articleFive, 10)
+                articleOne.text = getString(R.string.articles_name_2_1)
+                articleTwo.text = getString(R.string.articles_name_2_2)
+                articleThree.text = getString(R.string.articles_name_2_3)
+
+                onClickListener(imgArticleOne, 4)
+                onClickListener(imgArticleTwo, 5)
+                onClickListener(imgArticleThree, 6)
             }
             3 -> {
-                articleOne.text = getString(R.string.articles_name_11)
-                articleTwo.text = getString(R.string.articles_name_12)
-                articleThree.text = getString(R.string.articles_name_13)
-                articleFour.text = getString(R.string.articles_name_14)
-                articleFive.text = getString(R.string.articles_name_15)
+                imgArticleOne.setBackgroundResource(R.drawable.img_article_3_1)
+                imgArticleTwo.setBackgroundResource(R.drawable.img_article_3_2)
+                imgArticleThree.setBackgroundResource(R.drawable.img_article_3_3)
 
-                onClickListener(articleOne, 11)
-                onClickListener(articleTwo, 12)
-                onClickListener(articleThree, 13)
-                onClickListener(articleFour, 14)
-                onClickListener(articleFive, 15)
+                articleOne.text = getString(R.string.articles_name_3_1)
+                articleTwo.text = getString(R.string.articles_name_3_2)
+                articleThree.text = getString(R.string.articles_name_3_3)
+
+                onClickListener(imgArticleOne, 7)
+                onClickListener(imgArticleTwo, 8)
+                onClickListener(imgArticleThree, 9)
+            }
+
+            4 -> {
+                imgArticleOne.setBackgroundResource(R.drawable.img_article_4_1)
+                imgArticleTwo.setBackgroundResource(R.drawable.img_article_4_2)
+                imgArticleThree.setBackgroundResource(R.drawable.img_article_4_3)
+
+                articleOne.text = getString(R.string.articles_name_4_1)
+                articleTwo.text = getString(R.string.articles_name_4_2)
+                articleThree.text = getString(R.string.articles_name_4_3)
+
+                onClickListener(imgArticleOne, 10)
+                onClickListener(imgArticleTwo, 11)
+                onClickListener(imgArticleThree, 12)
+            }
+
+            5 -> {
+                imgArticleOne.setBackgroundResource(R.drawable.img_article_5_1)
+                imgArticleTwo.setBackgroundResource(R.drawable.img_article_5_2)
+                imgArticleThree.setBackgroundResource(R.drawable.img_article_5_3)
+
+                articleOne.text = getString(R.string.articles_name_5_1)
+                articleTwo.text = getString(R.string.articles_name_5_2)
+                articleThree.text = getString(R.string.articles_name_5_3)
+
+                onClickListener(imgArticleOne, 13)
+                onClickListener(imgArticleTwo, 14)
+                onClickListener(imgArticleThree, 15)
             }
 
             else -> {
@@ -84,8 +115,8 @@ class ArticlesFragment : Fragment() {
         }
     }
 
-    private fun onClickListener(tv: TextView, position: Int) {
-        tv.setOnClickListener {
+    private fun onClickListener(img: ImageView, position: Int) {
+        img.setOnClickListener {
             findNavController().navigate(
                 ArticlesFragmentDirections.actionNavArticlesToNavArticleItem(
                     position
@@ -99,8 +130,11 @@ class ArticlesFragment : Fragment() {
             articleOne = itemCardArticleOne.txtItemCard
             articleTwo = itemCardArticleTwo.txtItemCard
             articleThree = itemCardArticleThree.txtItemCard
-            articleFour = itemCardArticleFour.txtItemCard
-            articleFive = itemCardArticleFive.txtItemCard
+
+            imgArticleOne = itemCardArticleOne.imgItemCard
+            imgArticleTwo = itemCardArticleTwo.imgItemCard
+            imgArticleThree = itemCardArticleThree.imgItemCard
+
         }
     }
 

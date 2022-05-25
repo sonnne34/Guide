@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_section_two -> {
                     drawerLayout.closeDrawer(GravityCompat.START)
-//                    navController.navigate(SectionsFragmentDirections.actionNavSectionsToNavArticles(2))
                     val args = Bundle()
                     args.putInt("position", 2)
                     navController.navigate(R.id.nav_articles, args)
@@ -64,7 +63,24 @@ class MainActivity : AppCompatActivity() {
                     val args = Bundle()
                     args.putInt("position", 3)
                     navController.navigate(R.id.nav_articles, args)
-//                    navController.navigate(SectionsFragmentDirections.actionNavSectionsToNavArticles(3))
+                    true
+                }
+                R.id.nav_section_four -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    val args = Bundle()
+                    args.putInt("position", 4)
+                    navController.navigate(R.id.nav_articles, args)
+                    true
+                }
+                R.id.nav_section_five -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    val args = Bundle()
+                    args.putInt("position", 5)
+                    navController.navigate(R.id.nav_articles, args)
+                    true
+                }
+                R.id.nav_exit -> {
+                    finishAffinity()
                     true
                 }
                 else -> true
@@ -75,5 +91,13 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 }

@@ -28,25 +28,46 @@ class ItemsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val position = args.poition - 1
-        val str = listOf(
-            getString(R.string.articles_text_1),
-            getString(R.string.articles_text_2),
-            getString(R.string.articles_text_3),
-            getString(R.string.articles_text_4),
-            getString(R.string.articles_text_5),
-            getString(R.string.articles_text_6),
-            getString(R.string.articles_text_7),
-            getString(R.string.articles_text_8),
-            getString(R.string.articles_text_9),
-            getString(R.string.articles_text_10),
-            getString(R.string.articles_text_11),
-            getString(R.string.articles_text_12),
-            getString(R.string.articles_text_13),
-            getString(R.string.articles_text_14),
-            getString(R.string.articles_text_15),
+        val position = args.position - 1
+
+        val imgListDrawables = listOf(
+            R.drawable.img_article_1_1,
+            R.drawable.img_article_1_2,
+            R.drawable.img_article_1_3,
+            R.drawable.img_article_2_1,
+            R.drawable.img_article_2_2,
+            R.drawable.img_article_2_3,
+            R.drawable.img_article_3_1,
+            R.drawable.img_article_3_2,
+            R.drawable.img_article_3_3,
+            R.drawable.img_article_4_1,
+            R.drawable.img_article_4_2,
+            R.drawable.img_article_4_3,
+            R.drawable.img_article_5_1,
+            R.drawable.img_article_5_2,
+            R.drawable.img_article_5_3
         )
-        binding.txtArticles.text = str[position]
+
+        val articleListString = listOf(
+            getString(R.string.articles_text_1_1),
+            getString(R.string.articles_text_1_2),
+            getString(R.string.articles_text_1_3),
+            getString(R.string.articles_text_2_1),
+            getString(R.string.articles_text_2_2),
+            getString(R.string.articles_text_2_3),
+            getString(R.string.articles_text_3_1),
+            getString(R.string.articles_text_3_2),
+            getString(R.string.articles_text_3_3),
+            getString(R.string.articles_text_4_1),
+            getString(R.string.articles_text_4_2),
+            getString(R.string.articles_text_4_3),
+            getString(R.string.articles_text_5_1),
+            getString(R.string.articles_text_5_2),
+            getString(R.string.articles_text_5_3),
+        )
+
+        binding.imgArticle.setBackgroundResource(imgListDrawables[position])
+        binding.txtArticles.text = articleListString[position]
         binding.btnHome.setOnClickListener {
             findNavController().navigate(ItemsFragmentDirections.actionNavArticleItemToNavSections())
         }

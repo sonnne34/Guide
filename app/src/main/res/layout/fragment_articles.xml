@@ -22,16 +22,5 @@
             android:id="@+id/item_card_article_three"
             layout="@layout/item_card" />
 
-        <include
-            android:id="@+id/item_card_article_four"
-            layout="@layout/item_card" />
-
-        <include
-            android:id="@+id/item_card_article_five"
-            layout="@layout/item_card" />
-
     </LinearLayout>
-
-
-
 </ScrollView>

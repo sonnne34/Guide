@@ -8,21 +8,25 @@
     <fragment
         android:id="@+id/nav_sections"
         android:name="com.template.SectionsFragment"
-        android:label="@string/menu_sections"
-        tools:layout="@layout/fragment_sections" >
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_sections">
         <action
             android:id="@+id/action_nav_sections_to_nav_articles"
-            app:destination="@id/nav_articles" />
+            app:destination="@id/nav_articles"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_articles"
         android:name="com.template.ArticlesFragment"
-        android:label="@string/menu_articles"
-        tools:layout="@layout/fragment_articles" >
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_articles">
         <action
             android:id="@+id/action_nav_articles_to_nav_article_item"
-            app:destination="@id/nav_article_item" />
+            app:destination="@id/nav_article_item"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
         <argument
             android:name="position"
             app:argType="integer" />
@@ -31,13 +35,15 @@
     <fragment
         android:id="@+id/nav_article_item"
         android:name="com.template.ItemsFragment"
-        android:label="@string/menu_article_item"
-        tools:layout="@layout/fragment_items" >
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_items">
         <argument
-            android:name="poition"
+            android:name="position"
             app:argType="integer" />
         <action
             android:id="@+id/action_nav_article_item_to_nav_sections"
-            app:destination="@id/nav_sections" />
+            app:destination="@id/nav_sections"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>

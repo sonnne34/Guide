@@ -23,11 +23,21 @@
         <action
             android:id="@+id/action_nav_articles_to_nav_article_item"
             app:destination="@id/nav_article_item" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_article_item"
         android:name="com.template.ItemsFragment"
         android:label="@string/menu_article_item"
-        tools:layout="@layout/fragment_items" />
+        tools:layout="@layout/fragment_items" >
+        <argument
+            android:name="poition"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_nav_article_item_to_nav_sections"
+            app:destination="@id/nav_sections" />
+    </fragment>
 </navigation>

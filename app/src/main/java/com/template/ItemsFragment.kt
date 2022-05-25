@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.template.databinding.FragmentItemsBinding
 
 class ItemsFragment : Fragment() {
 
     private var _binding: FragmentItemsBinding? = null
     private val binding get() = _binding!!
+
+    private val args by navArgs<ItemsFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,8 +28,7 @@ class ItemsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val articleId = 1 - 1
-
+        val position = args.poition - 1
         val str = listOf(
             getString(R.string.articles_text_1),
             getString(R.string.articles_text_2),
@@ -43,8 +46,10 @@ class ItemsFragment : Fragment() {
             getString(R.string.articles_text_14),
             getString(R.string.articles_text_15),
         )
-
-        binding.txtArticles.text = str[articleId]
+        binding.txtArticles.text = str[position]
+        binding.btnHome.setOnClickListener {
+            findNavController().navigate(ItemsFragmentDirections.actionNavArticleItemToNavSections())
+        }
     }
 
     override fun onDestroyView() {

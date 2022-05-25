@@ -28,15 +28,21 @@ class SectionsFragment : Fragment() {
         with(binding) {
             itemCardSectionOne.txtItemCard.text = getString(R.string.section_name_one)
             itemCardSectionOne.txtItemCard.setOnClickListener {
-                findNavController().navigate(R.id.action_nav_sections_to_nav_articles)
+                findNavController().navigate(
+                    SectionsFragmentDirections.actionNavSectionsToNavArticles(1)
+                )
             }
             itemCardSectionTwo.txtItemCard.text = getString(R.string.section_name_two)
             itemCardSectionTwo.txtItemCard.setOnClickListener {
-                findNavController().navigate(R.id.action_nav_sections_to_nav_articles)
+                findNavController().navigate(
+                    SectionsFragmentDirections.actionNavSectionsToNavArticles(2)
+                )
             }
             itemCardSectionThree.txtItemCard.text = getString(R.string.section_name_three)
             itemCardSectionThree.txtItemCard.setOnClickListener {
-                findNavController().navigate(R.id.action_nav_sections_to_nav_articles)
+                findNavController().navigate(
+                    SectionsFragmentDirections.actionNavSectionsToNavArticles(3)
+                )
             }
         }
     }

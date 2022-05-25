@@ -7,12 +7,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.template.databinding.FragmentArticlesBinding
 
 class ArticlesFragment : Fragment() {
 
     private var _binding: FragmentArticlesBinding? = null
     private val binding get() = _binding!!
+
+    private val args by navArgs<ArticlesFragmentArgs>()
 
     private lateinit var articleOne: TextView
     private lateinit var articleTwo: TextView
@@ -34,10 +37,8 @@ class ArticlesFragment : Fragment() {
 
         bindingView()
 
-        val argsSection = listOf("sectionOne", "sectionTwo", "sectionThree")
-
-        when (argsSection.random()) {
-            "sectionOne" -> {
+        when (args.position) {
+            1 -> {
                 articleOne.text = getString(R.string.articles_name_1)
                 articleTwo.text = getString(R.string.articles_name_2)
                 articleThree.text = getString(R.string.articles_name_3)
@@ -50,7 +51,7 @@ class ArticlesFragment : Fragment() {
                 onClickListener(articleFour, 4)
                 onClickListener(articleFive, 5)
             }
-            "sectionTwo" -> {
+            2 -> {
                 articleOne.text = getString(R.string.articles_name_6)
                 articleTwo.text = getString(R.string.articles_name_7)
                 articleThree.text = getString(R.string.articles_name_8)
@@ -63,7 +64,7 @@ class ArticlesFragment : Fragment() {
                 onClickListener(articleFour, 9)
                 onClickListener(articleFive, 10)
             }
-            "sectionThree" -> {
+            3 -> {
                 articleOne.text = getString(R.string.articles_name_11)
                 articleTwo.text = getString(R.string.articles_name_12)
                 articleThree.text = getString(R.string.articles_name_13)
@@ -85,7 +86,11 @@ class ArticlesFragment : Fragment() {
 
     private fun onClickListener(tv: TextView, position: Int) {
         tv.setOnClickListener {
-            findNavController().navigate(R.id.action_nav_articles_to_nav_article_item)
+            findNavController().navigate(
+                ArticlesFragmentDirections.actionNavArticlesToNavArticleItem(
+                    position
+                )
+            )
         }
     }
 

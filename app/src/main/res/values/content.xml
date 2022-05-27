@@ -2,11 +2,11 @@
 <resources>
 
     <!-- Названия разделов -->
-    <string name="section_name_1"> Заменить название Раздел 1 </string>
-    <string name="section_name_2"> Заменить название Раздел 2 </string>
-    <string name="section_name_3"> Заменить название Раздел 3 </string>
-    <string name="section_name_4"> Заменить название Раздел 4 </string>
-    <string name="section_name_5"> Заменить название Раздел 5 </string>
+    <string name="section_name_1"> Заменить имя Раздела 1 </string>
+    <string name="section_name_2"> Заменить имя Раздела 2 </string>
+    <string name="section_name_3"> Заменить имя Раздела 3 </string>
+    <string name="section_name_4"> Заменить имя Раздела 4 </string>
+    <string name="section_name_5"> Заменить имя Раздела 5 </string>
 
     <!-- Названия статей раздела 1 -->
     <string name="articles_name_1_1"> Заменить название статьи_1_1 </string>

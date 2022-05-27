@@ -46,6 +46,7 @@
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:text="@string/home"
+        android:backgroundTint="@color/accent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
